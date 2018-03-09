@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_id: 1
+  cardtitle: MyString
+  lane_id: 1
+  parentcard_id: 1
+  cardtype: MyString
+  tasktype: MyString
+  cardsize: 1
+  plannedstartdate: 2018-03-09 11:28:23
+  plannedenddate: 2018-03-09 11:28:23
+  actualstartdate: 2018-03-09 11:28:23
+  actualenddate: 2018-03-09 11:28:23
+
+two:
+  card_id: 1
+  cardtitle: MyString
+  lane_id: 1
+  parentcard_id: 1
+  cardtype: MyString
+  tasktype: MyString
+  cardsize: 1
+  plannedstartdate: 2018-03-09 11:28:23
+  plannedenddate: 2018-03-09 11:28:23
+  actualstartdate: 2018-03-09 11:28:23
+  actualenddate: 2018-03-09 11:28:23
