@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sprintcard_id: 1
+  sprint_id: 1
+  card_id: 1
+  addeddate: 2018-03-09 14:08:51
+  deleteddate: 2018-03-09 14:08:51
+
+two:
+  sprintcard_id: 1
+  sprint_id: 1
+  card_id: 1
+  addeddate: 2018-03-09 14:08:51
+  deleteddate: 2018-03-09 14:08:51

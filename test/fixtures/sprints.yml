@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sprint_id: 1
+  sprinttitle: MyString
+  startdate: 2018-03-09 14:05:37
+  enddate: 2018-03-09 14:05:37
+  board_id: 1
+  createddate: 2018-03-09 14:05:37
+  updateddate: 2018-03-09 14:05:37
+  points: 1
+
+two:
+  sprint_id: 1
+  sprinttitle: MyString
+  startdate: 2018-03-09 14:05:37
+  enddate: 2018-03-09 14:05:37
+  board_id: 1
+  createddate: 2018-03-09 14:05:37
+  updateddate: 2018-03-09 14:05:37
+  points: 1
