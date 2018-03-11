@@ -10,26 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307144733) do
+ActiveRecord::Schema.define(version: 20180311205100) do
 
   create_table "boards", force: :cascade do |t|
+    t.integer "leankit_board_id", null: false
+    t.string "boardtitle"
+    t.string "boarddesc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "card_id"
+    t.integer "leankit_card_id", null: false
+    t.string "cardtitle"
+    t.integer "leankit_lane_id", null: false
+    t.integer "parentcard_id"
+    t.string "cardtype"
+    t.string "tasktype"
+    t.integer "cardsize"
+    t.datetime "plannedstartdate"
+    t.datetime "planneddate"
+    t.datetime "actualstartdate"
+    t.datetime "actualenddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "lanes", force: :cascade do |t|
-    t.string "lane_id"
+    t.integer "leankit_lane_id", null: false
+    t.string "lanename"
+    t.integer "parentlane_id"
+    t.integer "cardcount"
+    t.integer "leankit_board_id", null: false
+    t.integer "lanecolumns"
+    t.string "lanetype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "sprintcards", force: :cascade do |t|
+    t.integer "leankit_sprintcard_id"
+    t.integer "leankit_sprint_id"
+    t.integer "leankit_card_id"
+    t.datetime "addeddate"
+    t.datetime "deleteddate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.datetime "completedat"
+  end
+
+  create_table "sprints", force: :cascade do |t|
+    t.integer "leankit_sprint_id", null: false
+    t.string "sprinttitle"
+    t.datetime "startdate"
+    t.time "enddate"
+    t.integer "leankit_board_id", null: false
+    t.datetime "createddate"
+    t.datetime "updateddate"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

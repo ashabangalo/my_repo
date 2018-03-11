@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lane_id: 1
+  leankit_lane_id: 1
   lanename: MyString
   parentlane_id: 1
   cardcount: 1
-  board_id: 1
+  leankit_board_id: 1
   lanecolumns: 1
   lanetype: MyString
 
 two:
-  lane_id: 1
+  leankit_lane_id: 1
   lanename: MyString
   parentlane_id: 1
   cardcount: 1
-  board_id: 1
+  leankit_board_id: 1
   lanecolumns: 1
   lanetype: MyString
