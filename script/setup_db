@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+# Rails migrations are picky about env vars, so
+unset VERSION
+
+echo "===> Setting up DB..."
+# reset database to a fresh state.
+
+if [ -n "$JENKINS_URL" ]; then
+  bundle exec rake db:drop db:create db:schema:load
+else
+  # Tasks for dev environment
+  echo "===> Run this command to drop the database and setup a new one:"
+  echo "===> bundle exec rake db:drop db:create db:schema:load"
+fi

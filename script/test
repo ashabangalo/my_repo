@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+cd "$(dirname "$0")/.."
+
+export RAILS_ENV="test" RACK_ENV="test"
+
+# start dependencies
+script/mysql
+
+script/setup
+
+echo "===> Running rubocop linter on changed files"
+# The tag below represents the latest commit at the time of implementation of this script
+# Please do not change it
+# It means that from this point on, you must have valid ruby syntax
+if [[ -n "$1" && $1 == "-a" ]]; then
+  auto_correct="--auto-correct"
+fi
+
+bundle exec rubocop -D
+
+echo "===> Running rspec"
+if [[ -n "$1" && $1 != "-a" ]]; then
+  # pass arguments to test call. This is useful for calling a single test.
+  # bundle exec rspec "$1"
+  bundle exec test "$1"
+else
+  # bundle exec rspec
+  bundle exec test
+fi

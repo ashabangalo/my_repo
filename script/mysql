@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# script can start/stop/restart MySQL
+#  Use: script/mysql will default to start
+#  Use: script/mysql start
+#  Use: script/mysql stop
+#  Use: script/mysql restart
+
+set -e
+
+args=$1
+
+function is_mysql_running () {
+  if mysql.server status | egrep 'ERROR! MySQL is not running' > /dev/null; then
+    echo 'false'
+  else
+    echo 'true'
+  fi
+}
+
+function stop_mysql () {
+  if [[ $(is_mysql_running) = 'true' ]]; then
+    mysql.server stop
+  else
+    echo 'MySQL is not running'
+  fi
+}
+
+function start_mysql () {
+  if [[ $(is_mysql_running) = "true" ]]; then
+    echo 'MySQL is already running'
+  else
+    mysql.server start
+  fi
+}
+
+function restart_mysql () {
+  mysql.server restart
+}
+
+case $args in
+  'start') start_mysql;;
+  'stop') stop_mysql;;
+  'restart') restart_mysql;;
+  *) start_mysql;;
+esac
+
