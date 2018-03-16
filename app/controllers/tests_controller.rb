@@ -8,7 +8,7 @@ class TestsController < ApplicationController
 
     response  = GetBoard.get("627392013")
 
-    @responseview = "#{response} == TESTTTTT"
+    @responseview = "TEST==#{response}"
 
     #puts " RESPOSE BODY   ====  #{response.body}"
     #LeankitConnect.api

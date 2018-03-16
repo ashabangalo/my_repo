@@ -2,32 +2,30 @@ class GetBoard
   class << self
 
     def get(id)
-      response, status = get_json()
-      status == 200 ? response : errors(response)
+      response, status = get_json(id)
+      status == 200 ? response : errors(response,status)
     end
 
-    def errors(response)
-      error = { errors: { status: response["status"], message: response["message"] } }
-      #response.merge(error)
-      #puts "This is status : #{response.status}, body: #{response.body}"
+    def errors(response,status)
+      $stderr.puts "Leankit connection failed response:#{response}, status:#{status}"
     end
 
-    def get_json()
-      url = "https://rentpath.leankit.com/io/board/627392013"
+    def get_json(id)
+      url = "#{Settings.boardurl}#{id}"
       uri = URI(url)
       response = api.get(uri)
       #[JSON.parse(response.body), response.status]
-
       puts "STATUS==#{response.status}"
       puts "BODY==#{response.body}"
-      #return(JSON.parse(response))
+      puts "THIS IS SETTING== #{Settings.userid}, #{Settings.password}"
 
       [response.body , response.status]
-
     end
 
     def api
-      LeankitConnect.api
+      begin
+        LeankitConnect.api
+      end
     end
   end
 end

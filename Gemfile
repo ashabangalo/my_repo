@@ -10,7 +10,7 @@ source source_rubygems do
   gem 'turbolinks', '~> 5'
   gem 'uglifier', '>= 1.3.0'
   gem 'unicorn', '~> 5.4'
-
+  gem 'config'
   gem 'faraday'
   group :development, :test do
     gem 'capybara', '~> 2.13'
@@ -20,6 +20,7 @@ source source_rubygems do
     gem 'rubocop', '~> 0.51', require: false
     gem 'selenium-webdriver'
     gem 'faraday'
+    gem 'config'
   end
 
   group :development do
@@ -28,6 +29,7 @@ source source_rubygems do
     gem 'spring-watcher-listen', '~> 2.0.0'
     gem 'web-console', '>= 3.3.0'
     gem 'faraday'
+    gem 'config'
   end
 
   gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
