@@ -13,5 +13,10 @@ RSpec.describe BoardController, type: :controller do
       get :show, params: {id: board.to_param}
       expect(response).to be_success
     end
+
+  it 'Get board details by bord ID' do
+      @cardsResponse,@cardsStatus = GetLeankitBoard.get("627392013")
+      expect(@cardsStatus).to eq(200)
+    end
   end
 end

@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Testing boardLeankit details </title>
+  </head>
+  <body>
+    <h1> Leankit board details</h1>
+      <% if @boardStatus == 200 %>
+        <%= @boardResponse %>
+      <%else %>
+        <h1> Not able to get Board details for boardId <%=@myboardId%> </h>
+      <% end %>
+
+  </body>
+</html>

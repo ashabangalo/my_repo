@@ -1,12 +1,12 @@
-
+doctype html
 html
   head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title Testing boardLeankit details
   body
     h1 Leankit board details
-    | <% if @boardStatus == 200 %
-    | <%= @boardResponse %
-    | <%else %
-    h1
-      | Not able to get Board details for boardId <%=@myboardId%
-      | <% end %
+    - if @boardStatus == 200
+      = @boardResponse
+    - else
+      h1
+        | Not able to get Board details for boardId #{@myboardId}

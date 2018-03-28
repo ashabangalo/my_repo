@@ -11,7 +11,7 @@ RSpec.describe CardsController, type: :controller do
     end
   end
 
-it 'can get one card by card ID' do
+it 'Get a card details by passing card ID' do
     @cardsResponse,@cardsStatus = GetLeankitCards.get("445082433")
     expect(@cardsStatus).to eq(200)
 
