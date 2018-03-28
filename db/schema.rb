@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313150423) do
+ActiveRecord::Schema.define(version: 20180321212130) do
 
   create_table "boards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "leankit_board_id", null: false
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20180313150423) do
     t.datetime "planned_end_date"
     t.datetime "actual_start_date"
     t.datetime "actual_end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dummy_models", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

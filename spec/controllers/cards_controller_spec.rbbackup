@@ -1,0 +1,51 @@
+require 'rails_helper'
+
+
+RSpec.describe CardsController, type: :controller do
+
+  # describe 'GET index' do
+  #     it 'assigns @cards' do
+  #       card = FactoryBot.create(:card)
+  #       get :index
+  #       expect(assigns(:cards)).to eq([card])
+  #     end
+  #     it 'renders the index template' do
+  #       get :index
+  #       expect(response).to render_template('index')
+  #     end
+  #   end
+  #   describe 'GET #show' do
+  #     it 'renders the #show view' do
+  #       get :index, {id:card.id}
+  #       response.should render_template :show
+  #     end
+  #   end
+
+
+
+# before(:each) do
+#   @lane = FactoryBot.create(:lane)
+#   @card =FactoryBot.create(:card, :lane => @lane)
+#
+#   Card.should_receive(:find_by_lane_id).with(@lane.id).and_return(@cards)
+#   get :show, :lane_id => @lane.id
+# end
+  #
+  context 'Get #index' do
+    it 'returns a success response' do
+      get :index
+      expect(response).to be_success # response.success?
+    end
+  end
+
+
+
+  context 'Get #show' do
+    it 'returns a success response' do
+      card = Card.create!(leankit_lane_id: '1', leankit_card_id: '1')
+      get :show, params:{id: card.to_param}
+      expect(response).to be_success # response.success?
+    end
+  end
+
+end

@@ -1,0 +1,11 @@
+html
+  head
+    title Testing Leankit cards details
+  body
+    h1 Leankit cards details
+    | <% if @cardsStatus == 200 %
+    | <%= @cardsResponse %
+    | <%else %
+    h1
+      | Not able to get Cards details for cardsId <%=@mycardsId%
+      | <% end %

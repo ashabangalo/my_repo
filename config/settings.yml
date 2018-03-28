@@ -1,2 +1,4 @@
 boardurl: "https://rentpath.leankit.com/io/board/"
 cardurl: "https://rentpath.leankit.com/io/card/"
+taskurl: "https://rentpath.leankit.com/io/card/"
+leankiturl: "https://rentpath.leankit.com/io/auth/token"

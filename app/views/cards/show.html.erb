@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Testing Leankit cards details </title>
+  </head>
+  <body>
+    <h1> Leankit cards details</h1>
+      <% if @cardsStatus == 200 %>
+        <%= @cardsResponse %>
+      <%else %>
+        <h1> Not able to get Cards details for cardsId <%=@mycardsId%> </h>
+      <% end %>
+
+  </body>
+</html>
